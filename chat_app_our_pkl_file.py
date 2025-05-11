@@ -114,12 +114,12 @@ if user_input:
 
     
        # **Generate AI response**
-    response = openai.chat.completions.create(
-        model="gpt-4-turbo",
-        messages=st.session_state.messages
-    )
-    bot_reply = response.choices[0].message.content
-    st.session_state.messages.append({"role": "assistant", "content": bot_reply})
+    # response = openai.chat.completions.create(
+    #     model="gpt-4-turbo",
+    #     messages=st.session_state.messages
+    # )
+    # bot_reply = response.choices[0].message.content
+    # st.session_state.messages.append({"role": "assistant", "content": bot_reply})
 
-    # Display AI response
-    st.markdown(f'<div class="bot-msg">{bot_reply}</div><div class="clear"></div>', unsafe_allow_html=True)
+    # # Display AI response
+    # st.markdown(f'<div class="bot-msg">{bot_reply}</div><div class="clear"></div>', unsafe_allow_html=True)
