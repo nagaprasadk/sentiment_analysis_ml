@@ -21,79 +21,15 @@ openai.api_key = os.getenv("OPENAI_API_KEY")
 st.markdown("""
     <style>
     @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap');
-
-    html, body, [class*="css"] {
-        font-family: 'Roboto', sans-serif;
-        background-color: #ECE5DD;
-    }
-
-    .chat-container {
-        max-width: 600px;
-        margin: auto;
-        padding: 10px;
-        background-color: #FFFFFF;
-        border-radius: 12px;
-        box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-    }
-
-    .user-msg, .bot-msg {
-        padding: 10px 14px;
-        border-radius: 18px;
-        margin: 6px 0;
-        max-width: 75%;
-        word-wrap: break-word;
-        font-size: 0.95rem;
-        line-height: 1.4;
-    }
-
-    .user-msg {
-        background-color: #DCF8C6;
-        text-align: left;
-        float: right;
-        clear: both;
-    }
-
-    .bot-msg {
-        background-color: #FFFFFF;
-        border: 1px solid #E5E5EA;
-        text-align: left;
-        float: left;
-        clear: both;
-    }
-
-    .sentiment-box {
-        display: block;
-        padding: 4px;
-        border-radius: 6px;
-        font-weight: bold;
-        margin: 2px 0 6px;
-        max-width: 160px;
-        font-size: 0.85rem;
-        text-align: center;
-    }
-
+    body { font-family: 'Roboto', sans-serif; }
+    .chat-container { max-width: 600px; margin: auto; }
+    .user-msg { background-color: #DCF8C6; text-align: right; padding: 12px; border-radius: 12px; margin: 5px 0; float: right; clear: both; max-width: 70%; }
+    .bot-msg { background-color: #E5E5EA; text-align: left; padding: 12px; border-radius: 12px; margin: 5px 0; float: left; clear: both; max-width: 70%; }
+    .sentiment-box { display: block; padding: 6px; border-radius: 6px; font-weight: bold; margin: 10px auto; max-width: 200px; text-align: center; }
     .positive { background-color: #D4EDDA; color: #155724; }
     .neutral { background-color: #FFF3CD; color: #856404; }
     .negative { background-color: #F8D7DA; color: #721C24; }
-
     .clear { clear: both; }
-
-    /* Reduce top padding above title */
-    section.main > div:first-child {
-        padding-top: 0rem !important;
-        margin-top: -1.5rem !important;
-    }
-
-    /* Optional: Rounded title background */
-    h1 {
-        font-size: 1.5rem;
-        background-color: #25D366;
-        color: white;
-        padding: 10px 16px;
-        border-radius: 12px;
-        text-align: center;
-        margin-bottom: 16px;
-    }
     </style>
 """, unsafe_allow_html=True)
 
