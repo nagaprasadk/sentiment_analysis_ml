@@ -21,17 +21,84 @@ openai.api_key = os.getenv("OPENAI_API_KEY")
 st.markdown("""
     <style>
     @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap');
-    body { font-family: 'Roboto', sans-serif; }
-    .chat-container { max-width: 600px; margin: auto; }
-    .user-msg { background-color: #DCF8C6; text-align: right; padding: 12px; border-radius: 12px; margin: 5px 0; float: right; clear: both; max-width: 70%; }
-    .bot-msg { background-color: #E5E5EA; text-align: left; padding: 12px; border-radius: 12px; margin: 5px 0; float: left; clear: both; max-width: 70%; }
-    .sentiment-box { display: block; padding: 6px; border-radius: 6px; font-weight: bold; margin: 10px auto; max-width: 200px; text-align: center; }
-    .positive { background-color: #D4EDDA; color: #155724; }
-    .neutral { background-color: #FFF3CD; color: #856404; }
-    .negative { background-color: #F8D7DA; color: #721C24; }
-    .clear { clear: both; }
+    
+    html, body {
+        margin: 0;
+        padding: 0;
+        font-family: 'Roboto', sans-serif;
+        background-color: #f0f2f5;
+    }
+
+    .chat-container {
+        width: 100%;
+        max-width: 900px;
+        margin: 0 auto;
+        padding: 0 16px;
+    }
+
+    .user-msg, .bot-msg {
+        font-size: 14px;
+        padding: 10px 14px;
+        border-radius: 18px;
+        margin: 4px 0;
+        max-width: 75%;
+        word-wrap: break-word;
+    }
+
+    .user-msg {
+        background-color: #DCF8C6;
+        float: right;
+        clear: both;
+        text-align: left;
+    }
+
+    .bot-msg {
+        background-color: #E5E5EA;
+        float: left;
+        clear: both;
+        text-align: left;
+    }
+
+    .sentiment-box {
+        font-size: 13px;
+        display: inline-block;
+        margin: 4px 0 12px;
+        padding: 4px 10px;
+        border-radius: 12px;
+        font-weight: 500;
+    }
+
+    .positive {
+        background-color: #d4edda;
+        color: #155724;
+    }
+
+    .neutral {
+        background-color: #fff3cd;
+        color: #856404;
+    }
+
+    .negative {
+        background-color: #f8d7da;
+        color: #721c24;
+    }
+
+    .clear {
+        clear: both;
+    }
+
+    .block-container {
+        padding-top: 0 !important;
+    }
+
+    h1 {
+        margin-top: 0;
+        padding-top: 0;
+        font-size: 28px;
+    }
     </style>
 """, unsafe_allow_html=True)
+
 
 
 
