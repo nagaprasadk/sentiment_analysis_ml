@@ -23,83 +23,79 @@ st.markdown("""
     @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap');
 
     html, body {
+        height: 100%;
         margin: 0;
-        padding: 0;
         font-family: 'Roboto', sans-serif;
-        background-color: #f0f2f5;
+        overflow: hidden;  /* Prevent entire page from scrolling */
     }
 
-    .block-container {
-        padding-top: 0 !important;  /* Removes Streamlit's default top padding */
-    }
-
-    h1 {
+    .fixed-title {
         text-align: center;
-        font-size: 26px;
-        margin-top: 20px;
-        margin-bottom: 30px;
+        padding: 20px 10px 10px 10px;
+        font-size: 2rem;
+        font-weight: 600;
+        background: white;
+        z-index: 10;
+        position: fixed;
+        width: 100%;
+        top: 0;
+        border-bottom: 1px solid #ddd;
     }
 
     .chat-container {
-        width: 100%;
-        max-width: 850px;
-        margin: 60px auto 0; /* TOP MARGIN ADDED HERE */
-        padding: 0 16px;
-    }
-
-    .user-msg, .bot-msg {
-        font-size: 14px;
-        padding: 10px 14px;
-        border-radius: 18px;
-        margin: 4px 0;
-        max-width: 70%;
-        word-wrap: break-word;
-        line-height: 1.4;
+        max-width: 700px;
+        margin: 0 auto;
+        margin-top: 100px;  /* Leave space for the title */
+        height: calc(100vh - 180px);
+        overflow-y: auto;
+        padding: 20px;
+        box-sizing: border-box;
     }
 
     .user-msg {
-        background-color: #eae2d7;
+        background-color: #DCF8C6;
+        text-align: right;
+        padding: 10px;
+        border-radius: 12px;
+        margin: 5px 0;
         float: right;
         clear: both;
-        text-align: left;
+        max-width: 70%;
+        font-size: 14px;
     }
 
     .bot-msg {
-        background-color: #E5E5EA;
+        background-color: #eae2d7;
+        text-align: left;
+        padding: 10px;
+        border-radius: 12px;
+        margin: 5px 0;
         float: left;
         clear: both;
-        text-align: left;
+        max-width: 70%;
+        font-size: 14px;
     }
 
     .sentiment-box {
+        display: block;
+        padding: 6px;
+        border-radius: 6px;
+        font-weight: bold;
+        margin: 10px auto;
+        max-width: 200px;
+        text-align: center;
         font-size: 13px;
-        display: inline-block;
-        margin: 2px 0 10px;
-        padding: 4px 10px;
-        border-radius: 12px;
-        font-weight: 500;
     }
 
-    .positive {
-        background-color: #d4edda;
-        color: #155724;
-    }
+    .positive { background-color: #D4EDDA; color: #155724; }
+    .neutral { background-color: #FFF3CD; color: #856404; }
+    .negative { background-color: #F8D7DA; color: #721C24; }
 
-    .neutral {
-        background-color: #fff3cd;
-        color: #856404;
-    }
+    .clear { clear: both; }
 
-    .negative {
-        background-color: #f8d7da;
-        color: #721c24;
-    }
-
-    .clear {
-        clear: both;
-    }
     </style>
 """, unsafe_allow_html=True)
+
 
 
 
