@@ -58,7 +58,7 @@ st.markdown("""
     }
 
     .user-msg {
-        background-color: #DCF8C6;
+        background-color: #eae2d7;
         float: right;
         clear: both;
         text-align: left;
