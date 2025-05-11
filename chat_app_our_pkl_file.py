@@ -47,7 +47,7 @@ st.markdown('<div class="chat-container">', unsafe_allow_html=True)
 
 # Display chat history
 for msg in st.session_state.messages:
-    css_class = "user-msg" if msg["role"] == "user" else "bot-msg"
+    css_class ="bot-msg"
     st.markdown(f'<div class="{css_class}">{msg["content"]}</div>', unsafe_allow_html=True)
 
     # If user message, show sentiment too
