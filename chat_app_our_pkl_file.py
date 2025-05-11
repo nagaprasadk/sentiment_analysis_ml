@@ -21,81 +21,84 @@ openai.api_key = os.getenv("OPENAI_API_KEY")
 st.markdown("""
     <style>
     @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap');
-
+    
     html, body {
-        height: 100%;
         margin: 0;
+        padding: 0;
         font-family: 'Roboto', sans-serif;
-        overflow: hidden;  /* Prevent entire page from scrolling */
-    }
-
-    .fixed-title {
-        text-align: center;
-        padding: 20px 10px 10px 10px;
-        font-size: 2rem;
-        font-weight: 600;
-        background: white;
-        z-index: 10;
-        position: fixed;
-        width: 100%;
-        top: 0;
-        border-bottom: 1px solid #ddd;
+        background-color: #f0f2f5;
     }
 
     .chat-container {
-        max-width: 700px;
+        width: 100%;
+        max-width: 900px;
         margin: 0 auto;
-        margin-top: 100px;  /* Leave space for the title */
-        height: calc(100vh - 180px);
-        overflow-y: auto;
-        padding: 20px;
-        box-sizing: border-box;
+        padding: 0 16px;
+    }
+
+    .user-msg, .bot-msg {
+        font-size: 14px;
+        padding: 10px 14px;
+        border-radius: 18px;
+        margin: 4px 0;
+        max-width: 75%;
+        word-wrap: break-word;
     }
 
     .user-msg {
         background-color: #DCF8C6;
-        text-align: right;
-        padding: 10px;
-        border-radius: 12px;
-        margin: 5px 0;
         float: right;
         clear: both;
-        max-width: 70%;
-        font-size: 14px;
+        text-align: left;
     }
 
     .bot-msg {
-        background-color: #eae2d7;
-        text-align: left;
-        padding: 10px;
-        border-radius: 12px;
-        margin: 5px 0;
+        background-color: #E5E5EA;
         float: left;
         clear: both;
-        max-width: 70%;
-        font-size: 14px;
+        text-align: left;
     }
 
     .sentiment-box {
-        display: block;
-        padding: 6px;
-        border-radius: 6px;
-        font-weight: bold;
-        margin: 10px auto;
-        max-width: 200px;
-        text-align: center;
         font-size: 13px;
+        display: inline-block;
+        margin: 4px 0 12px;
+        padding: 4px 10px;
+        border-radius: 12px;
+        font-weight: 500;
     }
 
-    .positive { background-color: #D4EDDA; color: #155724; }
-    .neutral { background-color: #FFF3CD; color: #856404; }
-    .negative { background-color: #F8D7DA; color: #721C24; }
+    .positive {
+        background-color: #d4edda;
+        color: #155724;
+    }
 
-    .clear { clear: both; }
+    .neutral {
+        background-color: #fff3cd;
+        color: #856404;
+    }
 
+    .negative {
+        background-color: #f8d7da;
+        color: #721c24;
+    }
+
+    .clear {
+        clear: both;
+    }
+
+    .block-container {
+        padding-top: 0 !important;
+    }
+
+    h1 {
+        margin-top: 20px;
+        padding-top: 0;
+        font-size: 28px;
+        text-align: center;
+    }
     </style>
 """, unsafe_allow_html=True)
-
 
 
 
