@@ -38,6 +38,9 @@ st.title("💬Customer Service for E-commerce ")
 if "messages" not in st.session_state:
     st.session_state.messages = []
 
+if "negative_count" not in st.session_state:
+    st.session_state.negative_count = 0
+
 st.markdown('<div class="chat-container">', unsafe_allow_html=True)
 
 # Display chat history
@@ -78,6 +81,12 @@ if user_input:
     sentiment_emoji = sentiment_emojis.get(sentiment_text, "⚪🤖")
     sentiment_class = sentiment_classes.get(sentiment_text, "neutral")
 
+    if sentiment_text == "Negative":
+        st.session_state.negative_count += 1
+    else:
+        st.session_state.negative_count = 0
+
+    
     # Display sentiment result
     st.markdown(f'<div class="sentiment-box {sentiment_class}">{sentiment_emoji} {sentiment_text}</div>', unsafe_allow_html=True)
     st.session_state.messages.append({
@@ -88,6 +97,22 @@ if user_input:
         "sentiment_class": sentiment_class
     })
 
+    if st.session_state.negative_count >= 2:
+        bot_reply = "🔔 It looks like you're experiencing issues. I've escalated this to a human assistant who will help you shortly."
+        st.session_state.messages.append({"role": "assistant", "content": bot_reply})
+        st.markdown(f'<div class="bot-msg">{bot_reply}</div><div class="clear"></div>', unsafe_allow_html=True)
+    else:
+        # Call OpenAI if not escalated
+        response = openai.chat.completions.create(
+        model="gpt-4-turbo",
+        messages=[{"role": m["role"], "content": m["content"]} for m in st.session_state.messages]
+        )
+        bot_reply = response.choices[0].message.content
+        st.session_state.messages.append({"role": "assistant", "content": bot_reply})
+        st.markdown(f'<div class="bot-msg">{bot_reply}</div><div class="clear"></div>', unsafe_allow_html=True)
+
+
+    
        # **Generate AI response**
     response = openai.chat.completions.create(
         model="gpt-4-turbo",
