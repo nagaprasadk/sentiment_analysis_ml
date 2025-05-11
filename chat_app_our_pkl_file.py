@@ -93,7 +93,7 @@ st.markdown("""
 
     h1 {
     margin-top: 50px;  /* Add space above the title */
-    padding-top: 0;
+    padding-top: 50px;
     font-size: 28px;
     text-align: center;
     }
