@@ -63,7 +63,7 @@ for msg in st.session_state.messages:
 user_input = st.chat_input("Type your message here...")
 
 if user_input:
-    st.session_state.messages.append({"role": "user", "content": user_input})
+    # st.session_state.messages.append({"role": "user", "content": user_input})
 
     # Display user message
     st.markdown(f'<div class="user-msg">{user_input}</div><div class="clear"></div>', unsafe_allow_html=True)
@@ -93,7 +93,7 @@ if user_input:
     st.markdown(f'<div class="sentiment-box {sentiment_class}">{sentiment_emoji} {sentiment_text}</div>', unsafe_allow_html=True)
     st.session_state.messages.append({
         "role": "user",
-        # "content": user_input,
+        "content": user_input,
         "sentiment": sentiment_text,
         "emoji": sentiment_emoji,
         "sentiment_class": sentiment_class
