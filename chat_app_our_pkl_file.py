@@ -92,9 +92,10 @@ st.markdown("""
     }
 
     h1 {
-        margin-top: 0;
-        padding-top: 0;
-        font-size: 28px;
+    margin-top: 20px;  /* Add space above the title */
+    padding-top: 0;
+    font-size: 28px;
+    text-align: center;
     }
     </style>
 """, unsafe_allow_html=True)
