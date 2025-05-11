@@ -43,9 +43,16 @@ st.markdown('<div class="chat-container">', unsafe_allow_html=True)
 # Display chat history
 for msg in st.session_state.messages:
     css_class = "user-msg" if msg["role"] == "user" else "bot-msg"
-    st.markdown(f'<div class="{css_class}">{msg["content"]}</div><div class="clear"></div>', unsafe_allow_html=True)
+    st.markdown(f'<div class="{css_class}">{msg["content"]}</div>', unsafe_allow_html=True)
 
-st.markdown('</div>', unsafe_allow_html=True)
+    # If user message, show sentiment too
+    if msg["role"] == "user" and "sentiment" in msg:
+        st.markdown(
+            f'<div class="sentiment-box {msg["sentiment_class"]}">{msg["emoji"]} {msg["sentiment"]}</div>',
+            unsafe_allow_html=True
+        )
+
+    st.markdown('<div class="clear"></div>', unsafe_allow_html=True)
 
 # Get user input
 user_input = st.chat_input("Type your message here...")
@@ -72,8 +79,14 @@ if user_input:
     sentiment_class = sentiment_classes.get(sentiment_text, "neutral")
 
     # Display sentiment result
-    st.markdown(f'<div class="sentiment-box {sentiment_class}">{sentiment_emoji} {sentiment_text}</div>', unsafe_allow_html=True)
-
+    # st.markdown(f'<div class="sentiment-box {sentiment_class}">{sentiment_emoji} {sentiment_text}</div>', unsafe_allow_html=True)
+    st.session_state.messages.append({
+        "role": "user",
+        "content": user_input,
+        "sentiment": sentiment_text,
+        "emoji": sentiment_emoji,
+        "sentiment_class": sentiment_class
+    })
 
        # **Generate AI response**
     response = openai.chat.completions.create(
