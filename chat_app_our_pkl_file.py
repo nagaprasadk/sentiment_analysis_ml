@@ -50,7 +50,7 @@ st.markdown("""
 
     .sentiment-box {
         font-size: 13px;
-        display: inline-block;
+        display: block;
         margin: 4px 0 12px;
         padding: 4px 10px;
         border-radius: 12px;
