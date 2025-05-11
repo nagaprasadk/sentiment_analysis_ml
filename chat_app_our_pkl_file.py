@@ -177,7 +177,8 @@ if user_input:
         # Call OpenAI if not escalated
         response = openai.chat.completions.create(
         model="gpt-4-turbo",
-        messages=[{"role": m["role"], "content": m["content"]} for m in st.session_state.messages]
+        messages=[{"role": m["role"], "content": m["content"]} for m in st.session_state.messages],
+            max_tokens=50
         )
         bot_reply = response.choices[0].message.content
         st.session_state.messages.append({"role": "assistant", "content": bot_reply})
