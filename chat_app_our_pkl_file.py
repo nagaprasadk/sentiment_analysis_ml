@@ -23,7 +23,7 @@ st.markdown("""
     @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap');
 
     html, body {
-        margin: 0;
+        margin:40px;
         padding: 0;
         font-family: 'Roboto', sans-serif;
         background-color: #f0f2f5;
