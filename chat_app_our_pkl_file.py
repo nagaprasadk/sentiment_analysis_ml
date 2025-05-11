@@ -22,7 +22,7 @@ st.markdown("""
     <style>
     @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap');
     
-    body { font-family: 'Roboto', sans-serif; }
+    body { font-family: 'Roboto', sans-serif,background-color: #eae2d7; }
     .chat-container { max-width: 600px; margin: auto; }
 
     .user-msg, .bot-msg {
