@@ -41,7 +41,7 @@ st.markdown("""
 
     .chat-container {
         width: 100%;
-        max-width: 850px;
+        max-width: 700px;
         margin: 10px auto 0;
         padding: 0 16px;
     }
