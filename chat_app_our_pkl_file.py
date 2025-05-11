@@ -23,7 +23,7 @@ st.markdown("""
     @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap');
 
     html, body {
-        margin:40px;
+        margin: 0;
         padding: 0;
         font-family: 'Roboto', sans-serif;
         background-color: #f0f2f5;
@@ -34,15 +34,16 @@ st.markdown("""
     }
 
     h1 {
-        margin-top: 80px;
         text-align: center;
         font-size: 26px;
+        margin-top: 20px;
+        margin-bottom: 30px;
     }
 
     .chat-container {
         width: 100%;
         max-width: 850px;
-        margin: 10px auto 0;
+        margin: 60px auto 0; /* TOP MARGIN ADDED HERE */
         padding: 0 16px;
     }
 
@@ -99,6 +100,7 @@ st.markdown("""
     }
     </style>
 """, unsafe_allow_html=True)
+
 
 
 
