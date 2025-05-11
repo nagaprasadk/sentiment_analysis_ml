@@ -34,14 +34,14 @@ st.markdown("""
     }
 
     h1 {
-        margin-top: 40px;
+        margin-top: 80px;
         text-align: center;
         font-size: 26px;
     }
 
     .chat-container {
         width: 100%;
-        max-width: 700px;
+        max-width: 850px;
         margin: 10px auto 0;
         padding: 0 16px;
     }
