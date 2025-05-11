@@ -79,7 +79,7 @@ if user_input:
     sentiment_class = sentiment_classes.get(sentiment_text, "neutral")
 
     # Display sentiment result
-    # st.markdown(f'<div class="sentiment-box {sentiment_class}">{sentiment_emoji} {sentiment_text}</div>', unsafe_allow_html=True)
+    st.markdown(f'<div class="sentiment-box {sentiment_class}">{sentiment_emoji} {sentiment_text}</div>', unsafe_allow_html=True)
     st.session_state.messages.append({
         "role": "user",
         "content": user_input,
