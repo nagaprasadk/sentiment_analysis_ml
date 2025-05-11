@@ -21,18 +21,28 @@ openai.api_key = os.getenv("OPENAI_API_KEY")
 st.markdown("""
     <style>
     @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap');
-    
+
     html, body {
-        margin: 30px;
+        margin: 0;
         padding: 0;
         font-family: 'Roboto', sans-serif;
         background-color: #f0f2f5;
     }
 
+    .block-container {
+        padding-top: 0 !important;  /* Removes Streamlit's default top padding */
+    }
+
+    h1 {
+        margin-top: 40px;
+        text-align: center;
+        font-size: 26px;
+    }
+
     .chat-container {
         width: 100%;
-        max-width: 900px;
-        margin: 0 auto;
+        max-width: 850px;
+        margin: 10px auto 0;
         padding: 0 16px;
     }
 
@@ -41,8 +51,9 @@ st.markdown("""
         padding: 10px 14px;
         border-radius: 18px;
         margin: 4px 0;
-        max-width: 75%;
+        max-width: 70%;
         word-wrap: break-word;
+        line-height: 1.4;
     }
 
     .user-msg {
@@ -62,7 +73,7 @@ st.markdown("""
     .sentiment-box {
         font-size: 13px;
         display: inline-block;
-        margin: 4px 0 12px;
+        margin: 2px 0 10px;
         padding: 4px 10px;
         border-radius: 12px;
         font-weight: 500;
@@ -85,17 +96,6 @@ st.markdown("""
 
     .clear {
         clear: both;
-    }
-
-    .block-container {
-        padding-top: 0 !important;
-    }
-
-    h1 {
-    margin-top: 50px;  /* Add space above the title */
-    padding-top: 50px;
-    font-size: 28px;
-    text-align: center;
     }
     </style>
 """, unsafe_allow_html=True)
